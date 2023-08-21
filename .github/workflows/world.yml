@@ -10,3 +10,9 @@ jobs:
         run: chmod +x ci/build-app.sh && ci/build-app.sh
       - name: Test
         run: chmod +x ci/unit-test-app.sh && ci/unit-test-app.sh
+        #upload artifacts use the following syntax with actions/upload-artifact@v3
+      - name: Upload Repo
+        uses: actions/upload-artifact@v3
+        with: 
+          name: code
+          path: .
